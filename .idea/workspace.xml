@@ -1,41 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e1c3152-c557-4f7c-91e4-968f0c99cc34" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Repo_G1_Dataset_2_flower.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Repo_G1_Dataset_2_flower.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projetFlower.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/projetFlower.ipynb" afterDir="false" />
-    </list>
+    <list default="true" id="b4a37f94-a67c-4b84-aba9-39882f010a15" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
-  <component name="ProjectId" id="1jQLv9sHJdZjNpoU0pH7UYySWWH" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1jPOf6mjaAniAX7YEiaGt4NUiOQ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -44,20 +23,25 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\fidan\PycharmProjects\ Repo_G1_Dataset_2_flower\functions" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
-      <module name="Repo_G1_Dataset_2_flower" />
+      <module name=" Repo_G1_Dataset_2_flower" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="/usr/local/bin/python3" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pycharm" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pycharm/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -70,45 +54,58 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9e1c3152-c557-4f7c-91e4-968f0c99cc34" name="Default Changelist" comment="" />
-      <created>1603731596526</created>
+      <changelist id="b4a37f94-a67c-4b84-aba9-39882f010a15" name="Default Changelist" comment="" />
+      <created>1603702361097</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1603731596526</updated>
+      <updated>1603702361097</updated>
     </task>
     <servers />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="WindowStateProjectService">
-    <state x="304" y="159" width="1071" height="724" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603731820641">
-      <screen x="0" y="23" width="1680" height="949" />
+    <state x="-1180" y="275" key="FileChooserDialogImpl" timestamp="1603738720203">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="304" y="159" width="1071" height="724" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1680.949@0.23.1680.949" timestamp="1603731820641" />
-    <state width="1659" height="254" key="GridCell.Tab.0.bottom" timestamp="1603731879229">
-      <screen x="0" y="23" width="1680" height="949" />
+    <state x="-1180" y="275" key="FileChooserDialogImpl/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1603738720203" />
+    <state x="-1136" y="422" key="Github.CreateGistDialog" timestamp="1603738521723">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1659" height="254" key="GridCell.Tab.0.bottom/0.23.1680.949@0.23.1680.949" timestamp="1603731879229" />
-    <state width="1659" height="254" key="GridCell.Tab.0.center" timestamp="1603731879229">
-      <screen x="0" y="23" width="1680" height="949" />
+    <state x="-1136" y="422" key="Github.CreateGistDialog/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1603738521723" />
+    <state width="1131" height="217" key="GridCell.Tab.0.bottom" timestamp="1603725897530">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1659" height="254" key="GridCell.Tab.0.center/0.23.1680.949@0.23.1680.949" timestamp="1603731879229" />
-    <state width="1659" height="254" key="GridCell.Tab.0.left" timestamp="1603731879229">
-      <screen x="0" y="23" width="1680" height="949" />
+    <state width="1131" height="217" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1603725897530" />
+    <state width="1131" height="217" key="GridCell.Tab.0.center" timestamp="1603725897529">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1659" height="254" key="GridCell.Tab.0.left/0.23.1680.949@0.23.1680.949" timestamp="1603731879229" />
-    <state width="1659" height="254" key="GridCell.Tab.0.right" timestamp="1603731879229">
-      <screen x="0" y="23" width="1680" height="949" />
+    <state width="1131" height="217" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1603725897529" />
+    <state width="1131" height="217" key="GridCell.Tab.0.left" timestamp="1603725897529">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1659" height="254" key="GridCell.Tab.0.right/0.23.1680.949@0.23.1680.949" timestamp="1603731879229" />
+    <state width="1131" height="217" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1603725897529" />
+    <state width="1131" height="217" key="GridCell.Tab.0.right" timestamp="1603725897530">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1131" height="217" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1603725897530" />
+    <state width="757" height="261" key="GridCell.Tab.1.bottom" timestamp="1603724606194">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="757" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1603724606194" />
+    <state width="757" height="261" key="GridCell.Tab.1.center" timestamp="1603724606193">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="757" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1603724606193" />
+    <state width="757" height="261" key="GridCell.Tab.1.left" timestamp="1603724606193">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="757" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1603724606193" />
+    <state width="757" height="261" key="GridCell.Tab.1.right" timestamp="1603724606194">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="757" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1603724606194" />
+    <state x="277" y="57" key="SettingsEditor" timestamp="1603703065359">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1603703065359" />
   </component>
 </project>
