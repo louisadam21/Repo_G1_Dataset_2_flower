@@ -1,16 +1,35 @@
+warnings.filterwarnings("ignore")
 import pandas as pd
 import math
 from pycharm.functions import fct
 
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn import metrics
+from sklearn.metrics import accuracy_score
+
 pd.set_option('display.max_columns', None)
-pd.set_option('display.max_rows', 1000)
+pd.set_option('display.max_rows', None)
 
-df = pd.read_csv("/Dataset_2_flower.csv", sep="|")
+chemin = "/Users/louisadam/Documents/GitHub/Repo_G1_Dataset_2_flower/Dataset_2_flower.csv"
 
-listColumnsOk = ["Id", "SepalLengthCm", "SepalWidthCm", "PetalLengthCm", "PetalWidthCm", "Species"] # Colonne
+dataframe = fct.dfcsv(chemin, "|")
+
+listColumnsOk = ["Id", "SepalLengthCm", "SepalWidthCm", "PetalLengthCm", "PetalWidthCm", "Species"]  # Colonne
 listColumnsNonOk = ["index", "Unnamed: 0", "Unnamed: 0.1", "Unnamed: 0.1.1", "level_0", "Unnamed: 0.1.1.1"]
 
-fct.counts(df, listColumnsOk)
-fct.dropColumns(df, listColumnsNonOk)
-fct.moyenne(df, "SepalLengthCm")
-fct.cleanId(df)
+
+
+#print(fct.counts(dataframe, listColumnsOk))
+
+dataframe = fct.dropColumns(dataframe, listColumnsNonOk)
+
+dataframe=fct.moyenne(dataframe, "SepalLengthCm")
+
+dataframe=fct.cleanId(dataframe, "Id")
+print(dataframe)
+
+colx = dataframe[['SepalLengthCm', 'SepalWidthCm', 'PetalLengthCm', 'PetalWidthCm']]  # Colonnes utilisées pour la prédiction
+coly = dataframe['Species']  # Le champs que l'on veut prédire
+
+fct.rfdf(colx, coly, 0.3, 10)
