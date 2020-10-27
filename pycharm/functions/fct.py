@@ -1,4 +1,14 @@
 import math
+import pandas as pd
+
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn import metrics
+from sklearn.metrics import accuracy_score
+
+def dfcsv(dataframe,csv):
+    dataframe=pd.read_csv(dataframe,sep=csv)
+    return dataframe
 
 def counts(dataframe,liste):
     """
@@ -9,8 +19,8 @@ def counts(dataframe,liste):
     """
     for i in liste:
         countcolumn=dataframe[i].value_counts()
-        print(countcolumn)
-    return countcolumn
+        #print(countcolumn)
+    return
 
 def drop(dataframe,liste):
     """
@@ -20,9 +30,8 @@ def drop(dataframe,liste):
     :return:
     """
     for i in liste:
-        dataframe.drop(i,axis=1)
-    print(dataframe)
-    return
+        dataframe=dataframe.drop(i,axis=1)
+    return dataframe
 
 def moyenne(dataframe,colonne):
     """
@@ -35,8 +44,7 @@ def moyenne(dataframe,colonne):
     dataframe = dataframe.astype({colonne: float})
     moy=dataframe[colonne].mean()
     dataframe[colonne]=dataframe[colonne].fillna(moy)
-    print(dataframe)
-    return
+    return dataframe
 
 
 def nettoyage(dataframe,colonne):
@@ -49,6 +57,15 @@ def nettoyage(dataframe,colonne):
     dataframe[colonne] = math.nan
     for i in dataframe.axes[0]:
         dataframe[colonne][i] = i+1
-    dataframe=dataframe.astype({colonne: int})
-    print(dataframe)
-    return
+    dataframe = dataframe.astype({colonne: int})
+    return dataframe
+
+def defrandomf(dataframe,xloc1,xloc2,xloc3,tsize,nb_arbre):
+    x=dataframe.iloc[:, xloc1 : xloc2]
+    y=dataframe.iloc[:, xloc3]
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=tsize)
+    clf = RandomForestClassifier(n_estimators=nb_arbre, oob_score=True)
+    clf.fit(x_train, y_train)
+    y_pred = clf.predict(x_test)
+    predrf=print("accuracy {:.10f}".format(accuracy_score(y_test, y_pred)))
+    return predrf
