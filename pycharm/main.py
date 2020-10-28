@@ -1,4 +1,5 @@
-warnings.filterwarnings("ignore")
+import warnings
+warnings.filterwarnings('ignore')
 import pandas as pd
 import math
 from pycharm.functions import fct
@@ -29,7 +30,12 @@ dataframe=fct.moyenne(dataframe, "SepalLengthCm")
 dataframe=fct.cleanId(dataframe, "Id")
 print(dataframe)
 
-colx = dataframe[['SepalLengthCm', 'SepalWidthCm', 'PetalLengthCm', 'PetalWidthCm']]  # Colonnes utilisées pour la prédiction
-coly = dataframe['Species']  # Le champs que l'on veut prédire
+colrfx = dataframe[['SepalLengthCm', 'SepalWidthCm', 'PetalLengthCm', 'PetalWidthCm']]  # Colonnes utilisées pour la prédiction
+colrfy = dataframe['Species']  # Le champs que l'on veut prédire
 
-fct.rfdf(colx, coly, 0.3, 10)
+fct.rfdf(colrfx, colrfy, 0.3, 10)
+
+collrx = dataframe.iloc[:, 1:-1]  # Champs des longuers et largeurs des pétales, sépales
+collry = dataframe.iloc[:, -1]  # Champs Species
+
+fct.lgdf(collrx, collry, 0.3)

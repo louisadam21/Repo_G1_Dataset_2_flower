@@ -7,6 +7,9 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn import metrics
 from sklearn.metrics import accuracy_score
 
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import classification_report
+
 
 def dfcsv(chemin,separ):
     dataframe = pd.read_csv(chemin, sep=separ)
@@ -79,5 +82,17 @@ def rfdf(colx,coly,tsize,nbarb):
 
     y_pred = clf.predict(x_test)
 
-    print("accuracy {:.10f}".format(accuracy_score(y_test, y_pred)))
+    print("Random forest accuracy {:.10f}".format(accuracy_score(y_test, y_pred)))
+    return
+
+def lgdf(colx,coly,tsize):
+
+    x_train, x_test, y_train, y_test = train_test_split(colx, coly, test_size=tsize, random_state=42)  # Sépare le dataset en 2 sets train et test(20% du dataset)
+
+    model = LogisticRegression()
+    model.fit(x_train, y_train)
+
+    predictions = model.predict(x_test)
+
+    print("Logistic regression accuracy {:.10f}".format(accuracy_score(y_test,predictions)))  # Affiche la fiabilité de l'aglorithme de prédiction, plsu l'indice est proche de 1, plus                                                             l'algo est fiable
     return
