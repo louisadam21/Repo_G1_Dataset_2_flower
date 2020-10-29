@@ -4,6 +4,7 @@ import pandas as pd
 from pycharm.functions import fct
 from pycharm.functions import algopred
 
+
 pd.set_option('display.max_columns', None)
 pd.set_option('display.max_rows', None)
 
@@ -18,7 +19,7 @@ print(fct.counts(dataframe, listColumnsOk))
 
 dataframe = fct.dropColumns(dataframe, listColumnsNonOk)
 
-dataframe=fct.moyenne(dataframe, "SepalLengthCm")
+dataframe=fct.cleanCol(dataframe, "SepalLengthCm")
 
 dataframe=fct.cleanId(dataframe, "Id")
 print(dataframe)
@@ -29,4 +30,5 @@ colrfy = dataframe['Species']  # Le champs que l'on veut prédire
 collrx = dataframe.iloc[:, 1:-1]  # Champs des longuers et largeurs des pétales, sépales
 collry = dataframe.iloc[:, -1]  # Champs Species
 """
-algopred.algodf(colrfx, colrfy, 0.3, "rf")
+listeesti=[10, 100, 1000]
+algopred.algodf(colrfx, colrfy, 0.3, "rf",listeesti)

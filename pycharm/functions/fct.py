@@ -1,9 +1,12 @@
 import math
 import pandas as pd
 
+import logging
+logging.basicConfig(filename='test_log.log',level=logging.INFO,format='%(asctime)s -- %(name)s -- %(levelname)s -- %(message)s')
 
 def dfcsv(chemin,separ):
     dataframe = pd.read_csv(chemin, sep=separ)
+
     return dataframe
 
 def counts(dataframe, liste):
@@ -16,6 +19,7 @@ def counts(dataframe, liste):
     for i in liste:
         countColumn = dataframe[i].value_counts() # Permet d'analyser les données des colonnes de la liste.
         print(countColumn)
+
     return
 
 
@@ -29,11 +33,12 @@ def dropColumns(dataframe, liste):
     col=[]
     for i in liste:
         col.append(i)
+    logging.info(col)
     dataframe=dataframe.drop(col, axis=1) # Supprime les colonnes présentes dans liste
     return dataframe
 
 
-def moyenne(dataframe, colonne):
+def cleanCol(dataframe, colonne):
     """
 
     :param dataframe: pandas.Dataframe
@@ -46,7 +51,6 @@ def moyenne(dataframe, colonne):
     dataframe[colonne]=dataframe[colonne].fillna(moy) # Remplace les Nan par la moyenne
 
     return dataframe
-
 
 def cleanId(dataframe,colonne):
     """
