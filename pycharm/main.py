@@ -1,14 +1,8 @@
 import pandas as pd
-import numpy as np
-import math
-import matplotlib.pyplot as plt
-from sklearn.preprocessing import LabelEncoder
-from functions import fct
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
-from sklearn import metrics
-from sklearn.metrics import accuracy_score
+from pycharm.functions import fct, algopred
 import warnings
+
+
 warnings.filterwarnings('ignore')
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
@@ -31,4 +25,7 @@ df=fct.moyenne(df, "SepalLengthCm")
 df=fct.nettoyage(df,"Id")
 print("FONCTION nettoyage \n",df)
 
-fct.defrandomf(df,1,4,5,0.30,10)
+#fct.defrandomf(df,1,4,5,0.30,10)
+
+listealgopred=[10,100,1000]
+algopred.algopred(df,1,4,5,0.3, "rf",listealgopred)

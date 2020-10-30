@@ -1,10 +1,7 @@
 import math
 import pandas as pd
-
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
-from sklearn import metrics
-from sklearn.metrics import accuracy_score
+import logging
+logging.basicConfig(filename='LOGTEST.log', level=logging.INFO)
 
 def dfcsv(dataframe,csv):
     dataframe=pd.read_csv(dataframe,sep=csv)
@@ -29,9 +26,13 @@ def drop(dataframe,liste):
     :param liste: string
     :return:
     """
+
     for i in liste:
         dataframe=dataframe.drop(i,axis=1)
+    logging.info(liste)
     return dataframe
+
+
 
 def moyenne(dataframe,colonne):
     """
@@ -59,8 +60,18 @@ def nettoyage(dataframe,colonne):
         dataframe[colonne][i] = i+1
     dataframe = dataframe.astype({colonne: int})
     return dataframe
-
+"""
 def defrandomf(dataframe,xloc1,xloc2,xloc3,tsize,nb_arbre):
+    
+
+    :param dataframe:
+    :param xloc1:
+    :param xloc2:
+    :param xloc3:
+    :param tsize:
+    :param nb_arbre:
+    :return:
+
     x=dataframe.iloc[:, xloc1 : xloc2]
     y=dataframe.iloc[:, xloc3]
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=tsize)
@@ -69,3 +80,4 @@ def defrandomf(dataframe,xloc1,xloc2,xloc3,tsize,nb_arbre):
     y_pred = clf.predict(x_test)
     predrf=print("accuracy {:.10f}".format(accuracy_score(y_test, y_pred)))
     return predrf
+"""
