@@ -73,16 +73,16 @@ def moyenneCOLONNE(dataframe,colonne):
 #dataframe.loc[(dataframe[colonne]=='None'),colonne]=math.nan
 
 
-def nettoyage(dataframe,colonne):
+def remplacevaleurcolonne(dataframe,x,y,colonne,z):
     """
 
     :param dataframe: pandas.dataframe
     :param colonne: nom de colonne en string
     :return:
     """
-    for i in dataframe.axes[0]:
-        dataframe[colonne][i] = i+1
-    dataframe = dataframe.astype({colonne: int})
+    for i in dataframe.axes[x]:
+        dataframe[colonne][i] = i+y
+    dataframe = dataframe.astype({colonne:z})
     return dataframe
 """
 def defrandomf(dataframe,xloc1,xloc2,xloc3,tsize,nb_arbre):

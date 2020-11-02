@@ -32,10 +32,10 @@ df=fct.moyenneCOLONNE(df,"SepalLengthCm")
 print(df)
 #print("FONCTION moyenne \n",df)
 
-df=fct.nettoyage(df,"Id")
+df=fct.remplacevaleurcolonne(df,0,1,"Id",int)
 print("FONCTION nettoyage \n",df)
 
 #fct.defrandomf(df,1,4,5,0.30,10)
 
 listealgopred=[10,100,1000]
-algopred.algopred(df,1,4,5,0.3, "rf",listealgopred)
+algopred.algopred(df,1,4,5,0.3,"rf",listealgopred)
