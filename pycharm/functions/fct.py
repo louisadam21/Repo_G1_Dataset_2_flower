@@ -7,6 +7,16 @@ def dfcsv(dataframe,csv):
     dataframe=pd.read_csv(dataframe,sep=csv)
     return dataframe
 
+def listeType(dataframe):
+        print(dataframe.dtypes)
+
+def control(dataframe,p):
+    if p == "isnull":
+        print(dataframe.isnull().any())
+    if p == "isna":
+        print(dataframe.isna().any())
+
+
 def counts(dataframe,liste):
     """
 
@@ -15,7 +25,7 @@ def counts(dataframe,liste):
     :return:
     """
     for i in liste:
-        countcolumn=dataframe[i].value_counts()
+        dataframe[i].value_counts()
         #print(countcolumn)
     return
 
@@ -32,20 +42,35 @@ def drop(dataframe,liste):
     logging.info(liste)
     return dataframe
 
+def convertTYPE(dataframe,colonne,x):
+    dataframe = dataframe.astype({colonne:x})
+    return dataframe
 
+def convertNAN(dataframe,x):
+    y=dataframe[x].dtypes
+    if y != float:
+        dataframe[x]=math.nan
+        print("CONVERTER EFFECTUE")
+        print(dataframe[x])
+    else: print ("CONVERTER IMPOSSIBLE DTYPES =",(dataframe[x].dtypes))
+    return dataframe
 
-def moyenne(dataframe,colonne):
+def NONENAN(dataframe, colonne,x):
+    dataframe.loc[(dataframe[colonne]==x),colonne]=math.nan
+    return dataframe
+
+def moyenneCOLONNE(dataframe,colonne):
     """
 
     :param dataframe: pandas.dataframe
     :param colonne: nom de colonne en string
     :return:
     """
-    dataframe.loc[(dataframe[colonne]=='None'),colonne]=math.nan
-    dataframe = dataframe.astype({colonne: float})
     moy=dataframe[colonne].mean()
     dataframe[colonne]=dataframe[colonne].fillna(moy)
     return dataframe
+
+#dataframe.loc[(dataframe[colonne]=='None'),colonne]=math.nan
 
 
 def nettoyage(dataframe,colonne):
@@ -55,7 +80,6 @@ def nettoyage(dataframe,colonne):
     :param colonne: nom de colonne en string
     :return:
     """
-    dataframe[colonne] = math.nan
     for i in dataframe.axes[0]:
         dataframe[colonne][i] = i+1
     dataframe = dataframe.astype({colonne: int})
