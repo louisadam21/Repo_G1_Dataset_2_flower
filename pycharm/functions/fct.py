@@ -48,7 +48,7 @@ def cleanCol(dataframe, colonne):
     dataframe.loc[(dataframe[colonne] == 'None'), colonne] = math.nan #remplace les None par NaN dans les colonnes saisies
     dataframe=dataframe.astype({colonne: float}) # Convertit tout en float
     moy = dataframe[colonne].mean() # Avoir la moyenne de la colonne
-    dataframe[colonne]=dataframe[colonne].fillna(moy) # Remplace les Nan par la moyenne
+    dataframe[colonne] = dataframe[colonne].fillna(moy) # Remplace les Nan par la moyenne
 
     return dataframe
 
@@ -63,3 +63,14 @@ def cleanId(dataframe,colonne):
         dataframe[colonne][i] = i + 1
     dataframe=dataframe.astype({colonne: int})
     return dataframe
+
+def isNan(dataframe):
+    is_NaN = dataframe.isnull()
+    row_has_NaN = is_NaN.any(axis=1)
+    rows_with_NaN = dataframe[row_has_NaN]
+    #if rows_with_NaN.empty is not True:
+        #print(rows_with_NaN)
+    isempty = rows_with_NaN.empty
+    print(rows_with_NaN)
+    print('Is the DataFrame empty :', isempty)
+    return
