@@ -6,7 +6,6 @@ from pycharm.functions import algopred
 from py2neo import Node, Relationship,Graph
 graphFlower = Graph("bolt://localhost:7687", auth=None)
 
-
 pd.set_option('display.max_columns', None)
 pd.set_option('display.max_rows', None)
 
@@ -32,75 +31,86 @@ colrfy = dataframe['Species']  # Le champs que l'on veut prédire
 collrx = dataframe.iloc[:, 1:-1]  # Champs des longuers et largeurs des pétales, sépales
 collry = dataframe.iloc[:, -1]  # Champs Species
 """
-#listeesti=[10, 100, 1000]
-#algopred.algodf(colrfx, colrfy, 0.3, "rf",listeesti)
+listeesti=[10, 100, 1000]
+algopred.algodf(colrfx, colrfy, 0.3, "rf",listeesti)
 
-#fct.isNan(dataframe)
+fct.isNan(dataframe)
 
-lstgenre=[]
-for i in range(len(dataframe)):
-    #print(dataframe.iloc[i,1])
-    nodeId=Node("Id", name=i)
-    if (dataframe.iloc[i,[5]]).values == "Iris-versicolor":
-        if "Iris-versicolor" not in lstgenre:
-            lstgenre.append("Iris-versicolor")
-            nodeVersi = Node("Species", name="Iris-versicolor")
-            relIdVersi = Relationship(nodeId, "type", nodeVersi)
+
+lstspec=[]
+for i in range(len(dataframe)): #Parcourt chaque ligne du dataframe
+    nodeId=Node("Id", name=i) #Créé un neoud pour chaque ligne
+    if (dataframe.iloc[i,[5]]).values == "Iris-versicolor": #Si la fleur est de type versicolor
+        if "Iris-versicolor" not in lstspec: #Si iris-versicolor est dans lstspec
+            lstspec.append("Iris-versicolor") #On ajoute le Species dans lstspec
+            nodeVersi = Node("Species", name="Iris-versicolor") #Créé un noeud Iris-Versicolor
+            relIdVersi = Relationship(nodeId, "type", nodeVersi) #Fait la relation entre l'id de la fleur et le type de la fleur
             graphFlower.create(relIdVersi)
-        elif "Iris-versicolor" in lstgenre:
-            relIdVersi = Relationship(nodeId, "type", nodeVersi)
+        elif "Iris-versicolor" in lstspec: #Si Iris-versicolor n'est pas dans lstspec, pas besoin de recréer le noeud
+            relIdVersi = Relationship(nodeId, "type", nodeVersi) #On créé seulement la relation
         graphFlower.create(relIdVersi)
-        nodeVersiSW = Node("Sepal Width",name=dataframe.iloc[i,2])
-        nodeVersiSL = Node("Sepal Length",name=dataframe.iloc[i,1])
-        nodeVersiPW = Node("Petal Width",name=dataframe.iloc[i,4])
-        nodeVersiPL = Node("Petal Length",name=dataframe.iloc[i,3])
-        relIdVersiSW = Relationship(nodeId, "taille", nodeVersiSW)
+
+        nodeVersiSL = Node("SepalLength", name=dataframe.iloc[i, 1])
+        nodeVersiSW = Node("SepalWidth",name=dataframe.iloc[i, 2])
+        nodeVersiPL = Node("PetalLength",name=dataframe.iloc[i, 3])
+        nodeVersiPW = Node("PetalWidth",name=dataframe.iloc[i, 4])
+
         relIdVersiSL = Relationship(nodeId, "taille", nodeVersiSL)
-        relIdVersiPW = Relationship(nodeId, "taille", nodeVersiPW)
+        relIdVersiSW = Relationship(nodeId, "taille", nodeVersiSW)
         relIdVersiPL = Relationship(nodeId, "taille", nodeVersiPL)
-        graphFlower.create(relIdVersiSW)
+        relIdVersiPW = Relationship(nodeId, "taille", nodeVersiPW)
+
         graphFlower.create(relIdVersiSL)
-        graphFlower.create(relIdVersiPW)
+        graphFlower.create(relIdVersiSW)
         graphFlower.create(relIdVersiPL)
-    elif (dataframe.iloc[i,[5]]).values == "Iris-setosa":
-        if "Iris-setosa" not in lstgenre:
-            lstgenre.append("Iris-setosa")
-            nodeSeto = Node("Species", name="Iris-setosa")
-            relIdSeto = Relationship(nodeId, "type", nodeSeto)
+        graphFlower.create(relIdVersiPW)
+
+    elif (dataframe.iloc[i,[5]]).values == "Iris-setosa": #Si la fleur est de type setosa
+        if "Iris-setosa" not in lstspec: #Si iris-setosa est dans lstspec
+            lstspec.append("Iris-setosa") #On ajoute le Species dans lstspec
+            nodeSeto = Node("Species", name="Iris-setosa") #Créé un noeud Iris-setosa
+            relIdSeto = Relationship(nodeId, "type", nodeSeto) #Fait la relation entre l'id de la fleur et le type de la fleur
             graphFlower.create(relIdSeto)
-        elif "Iris-setosa" in lstgenre:
-            relIdSeto = Relationship(nodeId, "type", nodeSeto)
+        elif "Iris-setosa" in lstspec:#Si Iris-setosa n'est pas dans lstspec, pas besoin de recréer le noeud
+            relIdSeto = Relationship(nodeId, "type", nodeSeto)#On créé seulement la relation
             graphFlower.create(relIdSeto)
-        nodeSetoSW = Node("Sepal Width",name=dataframe.iloc[i,2])
-        nodeSetoSL = Node("Sepal Length",name=dataframe.iloc[i,1])
-        nodeSetoPW = Node("Petal Width",name=dataframe.iloc[i,4])
-        nodeSetoPL = Node("Petal Length",name=dataframe.iloc[i,3])
-        relIdSetoSW = Relationship(nodeId, "taille", nodeSetoSW)
+
+        nodeSetoSL = Node("SepalLength", name=dataframe.iloc[i, 1])
+        nodeSetoSW = Node("SepalWidth",name=dataframe.iloc[i,2])
+        nodeSetoPL = Node("PetalLength",name=dataframe.iloc[i,3])
+        nodeSetoPW = Node("PetalWidth",name=dataframe.iloc[i,4])
+
         relIdSetoSL = Relationship(nodeId, "taille", nodeSetoSL)
-        relIdSetoPW = Relationship(nodeId, "taille", nodeSetoPW)
+        relIdSetoSW = Relationship(nodeId, "taille", nodeSetoSW)
         relIdSetoPL = Relationship(nodeId, "taille", nodeSetoPL)
-        graphFlower.create(relIdSetoSW)
+        relIdSetoPW = Relationship(nodeId, "taille", nodeSetoPW)
+
         graphFlower.create(relIdSetoSL)
-        graphFlower.create(relIdSetoPW)
+        graphFlower.create(relIdSetoSW)
         graphFlower.create(relIdSetoPL)
-    elif (dataframe.iloc[i,[5]]).values == "Iris-virginica":
-        if "Iris-virginica" not in lstgenre:
-            lstgenre.append("Iris-virginica")
-            nodeVirgi = Node("Species", name="Iris-virginica")
-            relIdVirgi = Relationship(nodeId, "type", nodeVirgi)
+        graphFlower.create(relIdSetoPW)
+
+    elif (dataframe.iloc[i,[5]]).values == "Iris-virginica": #Si la fleur est de type virginica
+        if "Iris-virginica" not in lstspec: #Si iris-virginica est dans lstspec
+            lstspec.append("Iris-virginica") #On ajoute le Species dans lstspec
+            nodeVirgi = Node("Species", name="Iris-virginica") #Créé un noeud Iris-virginica
+            relIdVirgi = Relationship(nodeId, "type", nodeVirgi) #Fait la relation entre l'id de la fleur et le type de la fleur
             graphFlower.create(relIdVirgi)
-        elif "Iris-virginica" in lstgenre:
-            relIdVirgi = Relationship(nodeId, "type", nodeVirgi)
+        elif "Iris-virginica" in lstspec:#Si Iris-virginica n'est pas dans lstspec, pas besoin de recréer le noeud
+            relIdVirgi = Relationship(nodeId, "type", nodeVirgi)#On créé seulement la relation
             graphFlower.create(relIdVirgi)
-        nodeVirgiSW = Node("Sepal Width",name=dataframe.iloc[i,2])
-        nodeVirgiSL = Node("Sepal Length",name=dataframe.iloc[i,1])
-        nodeVirgiPW = Node("Petal Width",name=dataframe.iloc[i,4])
-        nodeVirgiPL = Node("Petal Length",name=dataframe.iloc[i,3])
-        relIdVirgiSW = Relationship(nodeId, "taille", nodeVirgiSW)
+
+        nodeVirgiSL = Node("SepalLength", name=dataframe.iloc[i, 1])
+        nodeVirgiSW = Node("SepalWidth",name=dataframe.iloc[i,2])
+        nodeVirgiPL = Node("PetalLength",name=dataframe.iloc[i,3])
+        nodeVirgiPW = Node("PetalWidth",name=dataframe.iloc[i,4])
+
         relIdVirgiSL = Relationship(nodeId, "taille", nodeVirgiSL)
-        relIdVirgiPW = Relationship(nodeId, "taille", nodeVirgiPW)
+        relIdVirgiSW = Relationship(nodeId, "taille", nodeVirgiSW)
         relIdVirgiPL = Relationship(nodeId, "taille", nodeVirgiPL)
-        graphFlower.create(relIdVirgiSW)
+        relIdVirgiPW = Relationship(nodeId, "taille", nodeVirgiPW)
+
         graphFlower.create(relIdVirgiSL)
-        graphFlower.create(relIdVirgiPW)
+        graphFlower.create(relIdVirgiSW)
         graphFlower.create(relIdVirgiPL)
+        graphFlower.create(relIdVirgiPW)
