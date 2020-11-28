@@ -2,6 +2,8 @@ import math
 import pandas as pd
 import logging
 logging.basicConfig(filename='test_log.log',level=logging.INFO,format='%(asctime)s -- %(name)s -- %(levelname)s -- %(message)s')
+from py2neo import Node, Relationship,Graph
+graphFlower = Graph("bolt://localhost:7687", auth=None)
 
 def dfcsv(chemin,separ): #Fonction qui permet de lire un csv et le convertir en dataframe
     """
@@ -40,7 +42,8 @@ def dropColumns(dataframe, liste): #Permet de supprimer les colonnes inutiles
     col=[]
     for i in liste:
         col.append(i)
-    logging.info("Contenu de la variable col"+col)
+    logging.info("Contenu de la variable col")
+    logging.info(col)
     dataframe=dataframe.drop(col, axis=1) # Supprime les colonnes présentes dans liste
     return dataframe
 
@@ -57,7 +60,8 @@ def cleanCol(dataframe, colonne): #Fonction qui permet de nettoyer la ou les col
     dataframe=dataframe.astype({colonne: float}) # Convertit tout en float
     moy = dataframe[colonne].mean() # Avoir la moyenne de la colonne
     dataframe[colonne] = dataframe[colonne].fillna(moy) # Remplace les Nan par la moyenne
-    logging.info("Moyenne"+moy)
+    logging.info("Moyenne :")
+    logging.info(moy)
     return dataframe
 
 def cleanId(dataframe,colonne): #Fonction qui permet de rendre la colonne Id exploitable et pertinente
@@ -74,7 +78,7 @@ def cleanId(dataframe,colonne): #Fonction qui permet de rendre la colonne Id exp
     logging.info("Fct cleanId")
     return dataframe
 
-def isNan(dataframe):
+def isNan(dataframe): #Fonction qui permet de voir les lignes contenant Nan
     """
 
     :param dataframe: pandas.Dataframe
@@ -87,4 +91,9 @@ def isNan(dataframe):
     isempty = rows_with_NaN.empty
     print(rows_with_NaN)
     print('Is the DataFrame empty :', isempty)
+    return
+
+def createGraph(dataframe,nodeId,idx,elems):
+    for key,value in elems.items():
+        graphFlower.create(Relationship(nodeId, key, Node(key, name=dataframe.iloc[idx, value])))
     return
