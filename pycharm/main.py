@@ -9,7 +9,8 @@ graphFlower = Graph("bolt://localhost:7687", auth=None)
 pd.set_option('display.max_columns', None) #Options pour rendre plus ou moins lisible l'output du dataframe (colonnes)
 pd.set_option('display.max_rows', None) #Options pour rendre plus ou moins lisible l'output du dataframe (lignes)
 
-chemin = "/Users/louisadam/Documents/GitHub/Repo_G1_Dataset_2_flower/Dataset_2_flower.csv" #Chemin du csv
+#chemin = "Dataset_2_flower.csv" #Chemin du csv
+chemin = "/usr/src/app/pycharm/Dataset_2_flower.csv" #Chemin du csv
 
 #Exécution de la fonction dfcsv
 dataframe = fct.dfcsv(chemin, "|")
