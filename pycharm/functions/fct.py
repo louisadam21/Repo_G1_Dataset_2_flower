@@ -48,7 +48,7 @@ def dropColumns(dataframe, liste): #Permet de supprimer les colonnes inutiles
     return dataframe
 
 
-def cleanCol(dataframe, colonne): #Fonction qui permet de nettoyer la ou les colonnes
+def cleanCol(dataframe, colonne): #Fonction qui permet de nettoyer la ou les colonnes exploitables
     """
 
     :param dataframe: pandas.Dataframe
@@ -90,10 +90,18 @@ def isNan(dataframe): #Fonction qui permet de voir les lignes contenant Nan
     rows_with_NaN = dataframe[row_has_NaN]
     isempty = rows_with_NaN.empty
     print(rows_with_NaN)
-    print('Is the DataFrame empty :', isempty)
+    print("Le dataset ne contient pas de Nan :", isempty)
     return
 
-def createGraph(dataframe,nodeId,idx,elems):
-    for key,value in elems.items():
+def createGraph(dataframe,nodeId,idx,dico): #Fonction qui permet la création de la relation entre l'Id de la fleur et les tailles de petales,sépales
+    """
+
+    :param dataframe: pandas.Dataframe
+    :param nodeId: int
+    :param idx: int
+    :param dico: dictionnary
+    :return:
+    """
+    for key,value in dico.items(): #Parcourt le dictionnaire
         graphFlower.create(Relationship(nodeId, key, Node(key, name=dataframe.iloc[idx, value])))
     return

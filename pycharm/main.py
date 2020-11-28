@@ -27,10 +27,12 @@ dataframe=fct.cleanId(dataframe, "Id") #Execute la fonction cleanId sur la colon
 
 colrfx = dataframe[['SepalLengthCm', 'SepalWidthCm', 'PetalLengthCm', 'PetalWidthCm']]  #Colonnes utilisées pour la prédiction
 colrfy = dataframe['Species']  #Le champs que l'on veut prédire
+
 """
-collrx = dataframe.iloc[:, 1:-1]  # Champs des longuers et largeurs des pétales, sépales
-collry = dataframe.iloc[:, -1]  # Champs Species
+colrx = dataframe.iloc[:, 1:-1]  #Colonnes utilisées pour la prédiction
+colry = dataframe.iloc[:, -1]  #Le champs que l'on veut prédire
 """
+
 listeesti=[10, 100, 1000] #GridSearch sur la variable n_estimators (nb d'armes)
 algopred.algodf(colrfx, colrfy, 0.3, "rf",listeesti) #Exécution de la fonction algodf
 
