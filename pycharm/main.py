@@ -1,8 +1,8 @@
 import warnings
 warnings.filterwarnings('ignore')
 import pandas as pd
-from pycharm.functions import fct
-from pycharm.functions import algopred
+from functions import fct
+from functions import algopred
 from py2neo import Node, Relationship,Graph
 graphFlower = Graph("bolt://localhost:7687", auth=None)
 
