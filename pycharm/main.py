@@ -5,21 +5,21 @@ from py2neo import Graph,Node, Relationship
 graph=Graph("http://localhost:7474/", auth=None)
 
 warnings.filterwarnings('ignore')
-pd.set_option('display.max_rows', None)
-pd.set_option('display.max_columns', None)
+pd.set_option('display.max_rows', None) #Options pour voir toutes les colones
+pd.set_option('display.max_columns', None) #Options pour voir toutes les lignes
 
-chemin="C:/Users/fidan/Documents/PYTHON/Repo_G1_Dataset_2_flower/Dataset_2_flower.csv"
+chemin="C:/Users/fidan/Documents/PYTHON/Repo_G1_Dataset_2_flower/Dataset_2_flower.csv" #Chemin CSV
 df=fct.dfcsv(chemin, "|")
 #print("FONCTION CHEMIN \n",df)
 
-fct.listeType(df)
-fct.control(df,"isna")
+fct.listeType(df) #Affiche les type des colonne
+fct.control(df,"isna") #Affiche les colonnes avec les NAN
 
 dropColumns = ["index", "Unnamed: 0", "Unnamed: 0.1", "Unnamed: 0.1.1", "level_0", "Unnamed: 0.1.1.1"]
-df=fct.drop(df, dropColumns)
+df=fct.drop(df, dropColumns)  #Permet d'enlever les colones "index", "Unnamed: 0", "Unnamed: 0.1", "Unnamed: 0.1.1", "level_0", "Unnamed: 0.1.1.1"
 #print("FONCTION dropColumns \n",df)
 
-listColumns = ["Id", "SepalWidthCm", "PetalLengthCm", "PetalWidthCm", "Species"]
+listColumns = ["Id", "SepalWidthCm", "PetalLengthCm", "PetalWidthCm", "Species"] #Permet de créer une liste
 #print("FONCTION listColumns \n")
 fct.counts(df, listColumns)
 
@@ -48,29 +48,6 @@ df=fct.remplacevaleurcolonne(df,0,1,"Id",int)
 #for i in df["Id"]:
         #list_Id.append(i)
 #print(list_Id)
-
-#count=0
-#for i in df["Id"]:
-        #node_Id = Node('Id', name="Id")
-       # graph.create(node_Id)
-       # for i in df["Species"]:
-         #  if df["Species"].iloc[count]=="Iris-setosa":
-           #     node_seto = Node("Species", name="Iris-setosa")
-           #     #print(df.iloc[count])
-           #     graph_Id_Seto = Relationship(node_seto, "GENRE", node_Id)
-            #    graph.create(graph_Id_Seto)
-           # elif df["Species"].iloc[count]=="Iris-versicolor":
-           #     node_versi = Node("Species", name="Iris-versicolor")
-               #print(df.iloc[count])
-           #     graph_Id_Versi = Relationship(node_versi, "GENRE", node_Id)
-            #    graph.create(graph_Id_Versi)
-           # elif df["Species"].iloc[count]=="Iris-virginica":
-             #   node_vrigi = Node("Species", name="Iris-virginica")
-                #print(df.iloc[count])
-              #  graph_Id_Virgi = Relationship(node_vrigi,"GENRE", node_Id)
-              #  graph.create(graph_Id_Virgi)
-
-#count=count+1
 
 dictCm = {
     "SepalLengthCm": 1,
