@@ -2,15 +2,34 @@ import math
 import pandas as pd
 import logging
 logging.basicConfig(filename='LOGTEST.log', level=logging.INFO)
+from py2neo import Graph,Node, Relationship
+graph=Graph("http://localhost:7474/", auth=None)
 
 def dfcsv(dataframe,csv):
+    """
+
+    :param dataframe: pandas.dataframe
+    :param csv: type de dataframe
+    :return: dataframe
+    """
     dataframe=pd.read_csv(dataframe,sep=csv)
     return dataframe
 
 def listeType(dataframe):
-        print(dataframe.dtypes)
+    """
+
+    :param dataframe: pandas.dataframe
+    :return:
+    """
+    print(dataframe.dtypes)
 
 def control(dataframe,p):
+    """
+
+    :param dataframe: pandas.dataframe
+    :param p:
+    :return:
+    """
     if p == "isnull":
         print(dataframe.isnull().any())
     if p == "isna":
@@ -43,10 +62,23 @@ def drop(dataframe,liste):
     return dataframe
 
 def convertTYPE(dataframe,colonne,x):
+    """
+
+    :param dataframe: pandas.dataframe
+    :param colonne:
+    :param x:
+    :return:
+    """
     dataframe = dataframe.astype({colonne:x})
     return dataframe
 
 def convertNAN(dataframe,x):
+    """
+
+    :param dataframe: pandas.dataframe
+    :param x: colone
+    :return:
+    """
     y=dataframe[x].dtypes
     if y != float:
         dataframe[x]=math.nan
@@ -56,14 +88,21 @@ def convertNAN(dataframe,x):
     return dataframe
 
 def NONENAN(dataframe, colonne,x):
+    """
+
+    :param dataframe: df
+    :param colonne: nom de la colonne
+    :param x:
+    :return:
+    """
     dataframe.loc[(dataframe[colonne]==x),colonne]=math.nan
     return dataframe
 
 def moyenneCOLONNE(dataframe,colonne):
     """
 
-    :param dataframe: pandas.dataframe
-    :param colonne: nom de colonne en string
+    :param dataframe: df
+    :param colonne: nom de la colonne
     :return:
     """
     moy=dataframe[colonne].mean()
@@ -76,8 +115,11 @@ def moyenneCOLONNE(dataframe,colonne):
 def remplacevaleurcolonne(dataframe,x,y,colonne,z):
     """
 
-    :param dataframe: pandas.dataframe
-    :param colonne: nom de colonne en string
+    :param dataframe: df
+    :param x: colonnne dans le dataframme
+    :param y: valeur ajouté
+    :param colonne: nom de la colonne
+    :param z: type de la colonne
     :return:
     """
     for i in dataframe.axes[x]:
@@ -105,3 +147,15 @@ def defrandomf(dataframe,xloc1,xloc2,xloc3,tsize,nb_arbre):
     predrf=print("accuracy {:.10f}".format(accuracy_score(y_test, y_pred)))
     return predrf
 """
+
+def createGraph(dataframe,nodeId,idx,dico): #Fonction qui permet la création de la relation entre l'Id de la fleur et les tailles de petales,sépales
+    """
+    :param dataframe: pandas.Dataframe
+    :param nodeId: int
+    :param idx: int
+    :param dico: dictionnary
+    :return:
+    """
+    for key,value in dico.items(): #Parcourt le dictionnaire
+        graph.create(Relationship(nodeId, key, Node(key, name=dataframe.iloc[idx, value])))
+    return
