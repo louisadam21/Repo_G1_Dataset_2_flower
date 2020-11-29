@@ -103,3 +103,31 @@
 2020-11-28 14:01:34,675 -- root -- INFO -- Moyenne :
 2020-11-28 14:01:34,675 -- root -- INFO -- 5.845810810810811
 2020-11-28 14:01:34,906 -- root -- INFO -- Fct cleanId
+2020-11-28 21:49:19,459 -- root -- INFO -- Fct dropColumns
+2020-11-28 21:49:19,460 -- root -- INFO -- Contenu de la variable col
+2020-11-28 21:49:19,460 -- root -- INFO -- ['index', 'Unnamed: 0', 'Unnamed: 0.1', 'Unnamed: 0.1.1', 'level_0', 'Unnamed: 0.1.1.1']
+2020-11-28 21:49:19,463 -- root -- INFO -- Fct cleanCol
+2020-11-28 21:49:19,468 -- root -- INFO -- Moyenne :
+2020-11-28 21:49:19,468 -- root -- INFO -- 5.845810810810811
+2020-11-28 21:49:19,692 -- root -- INFO -- Fct cleanId
+2020-11-28 21:50:01,652 -- root -- INFO -- Fct dropColumns
+2020-11-28 21:50:01,653 -- root -- INFO -- Contenu de la variable col
+2020-11-28 21:50:01,653 -- root -- INFO -- ['index', 'Unnamed: 0', 'Unnamed: 0.1', 'Unnamed: 0.1.1', 'level_0', 'Unnamed: 0.1.1.1']
+2020-11-28 21:50:01,655 -- root -- INFO -- Fct cleanCol
+2020-11-28 21:50:01,658 -- root -- INFO -- Moyenne :
+2020-11-28 21:50:01,658 -- root -- INFO -- 5.845810810810811
+2020-11-28 21:50:01,910 -- root -- INFO -- Fct cleanId
+2020-11-28 21:50:21,859 -- root -- INFO -- Fct dropColumns
+2020-11-28 21:50:21,859 -- root -- INFO -- Contenu de la variable col
+2020-11-28 21:50:21,859 -- root -- INFO -- ['index', 'Unnamed: 0', 'Unnamed: 0.1', 'Unnamed: 0.1.1', 'level_0', 'Unnamed: 0.1.1.1']
+2020-11-28 21:50:22,062 -- root -- INFO -- Fct cleanCol
+2020-11-28 21:50:22,066 -- root -- INFO -- Moyenne :
+2020-11-28 21:50:22,066 -- root -- INFO -- 5.845810810810811
+2020-11-28 21:50:22,327 -- root -- INFO -- Fct cleanId
+2020-11-28 21:50:33,425 -- root -- INFO -- Fct dropColumns
+2020-11-28 21:50:33,425 -- root -- INFO -- Contenu de la variable col
+2020-11-28 21:50:33,426 -- root -- INFO -- ['index', 'Unnamed: 0', 'Unnamed: 0.1', 'Unnamed: 0.1.1', 'level_0', 'Unnamed: 0.1.1.1']
+2020-11-28 21:50:33,430 -- root -- INFO -- Fct cleanCol
+2020-11-28 21:50:33,433 -- root -- INFO -- Moyenne :
+2020-11-28 21:50:33,433 -- root -- INFO -- 5.845810810810811
+2020-11-28 21:50:33,659 -- root -- INFO -- Fct cleanId
