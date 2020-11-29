@@ -20,10 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="124cd347-5e42-41ac-b925-6a870277591c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pycharm/functions/algopred.py" beforeDir="false" afterPath="$PROJECT_DIR$/pycharm/functions/algopred.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pycharm/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/pycharm/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pycharm/test_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/pycharm/test_log.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
