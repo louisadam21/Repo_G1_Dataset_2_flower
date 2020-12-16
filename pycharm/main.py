@@ -4,13 +4,14 @@ import pandas as pd
 from functions import fct
 from functions import algopred
 from py2neo import Node, Relationship,Graph
-graphFlower = Graph("bolt://localhost:7687", auth=None)
+#graphFlower = Graph("bolt://localhost:7687", auth=None)
+graphFlower = Graph()
 
 pd.set_option('display.max_columns', None) #Options pour rendre plus ou moins lisible l'output du dataframe (colonnes)
-pd.set_option('display.max_rows', 1000) #Options pour rendre plus ou moins lisible l'output du dataframe (lignes)
+pd.set_option('display.max_rows', None) #Options pour rendre plus ou moins lisible l'output du dataframe (lignes)
 
-#chemin = "Dataset_2_flower.csv" #Chemin du csv
-chemin = "/usr/src/app/pycharm/Dataset_2_flower.csv" #Chemin du csv
+chemin = "Dataset_2_flower.csv" #Chemin du csv
+#chemin = "/usr/src/app/pycharm/Dataset_2_flower.csv" #Chemin du csv
 
 #Exécution de la fonction dfcsv
 dataframe = fct.dfcsv(chemin, "|")
@@ -21,7 +22,7 @@ listColumnsNonOk = ["index", "Unnamed: 0", "Unnamed: 0.1", "Unnamed: 0.1.1", "le
 #print(fct.counts(dataframe, listColumnsOk)) #Execute la fonction counts sur les colonnes de la liste listColumnsOk
 
 dataframe = fct.dropColumns(dataframe, listColumnsNonOk) #Execute la fonction dropColumns sur les colonnes de la liste listColumnsNonOk
-print(dataframe)
+
 dataframe=fct.cleanCol(dataframe, "SepalLengthCm") #Execute la fonction cleanCol sur la colonne SepalLengthCm
 
 dataframe=fct.cleanId(dataframe, "Id") #Execute la fonction cleanId sur la colonne Id

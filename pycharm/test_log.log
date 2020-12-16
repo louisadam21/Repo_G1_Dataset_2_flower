@@ -131,3 +131,24 @@
 2020-11-28 21:50:33,433 -- root -- INFO -- Moyenne :
 2020-11-28 21:50:33,433 -- root -- INFO -- 5.845810810810811
 2020-11-28 21:50:33,659 -- root -- INFO -- Fct cleanId
+2020-12-01 20:41:26,394 -- root -- INFO -- Fct dropColumns
+2020-12-01 20:41:26,395 -- root -- INFO -- Contenu de la variable col
+2020-12-01 20:41:26,395 -- root -- INFO -- ['index', 'Unnamed: 0', 'Unnamed: 0.1', 'Unnamed: 0.1.1', 'level_0', 'Unnamed: 0.1.1.1']
+2020-12-01 20:41:26,400 -- root -- INFO -- Fct cleanCol
+2020-12-01 20:41:26,403 -- root -- INFO -- Moyenne :
+2020-12-01 20:41:26,404 -- root -- INFO -- 5.845810810810811
+2020-12-01 20:41:26,658 -- root -- INFO -- Fct cleanId
+2020-12-06 22:32:57,835 -- root -- INFO -- Fct dropColumns
+2020-12-06 22:32:57,836 -- root -- INFO -- Contenu de la variable col
+2020-12-06 22:32:57,836 -- root -- INFO -- ['index', 'Unnamed: 0', 'Unnamed: 0.1', 'Unnamed: 0.1.1', 'level_0', 'Unnamed: 0.1.1.1']
+2020-12-06 22:32:57,837 -- root -- INFO -- Fct cleanCol
+2020-12-06 22:32:57,843 -- root -- INFO -- Moyenne :
+2020-12-06 22:32:57,843 -- root -- INFO -- 5.845810810810811
+2020-12-06 22:32:58,083 -- root -- INFO -- Fct cleanId
+2020-12-06 22:33:20,092 -- root -- INFO -- Fct dropColumns
+2020-12-06 22:33:20,092 -- root -- INFO -- Contenu de la variable col
+2020-12-06 22:33:20,092 -- root -- INFO -- ['index', 'Unnamed: 0', 'Unnamed: 0.1', 'Unnamed: 0.1.1', 'level_0', 'Unnamed: 0.1.1.1']
+2020-12-06 22:33:20,093 -- root -- INFO -- Fct cleanCol
+2020-12-06 22:33:20,095 -- root -- INFO -- Moyenne :
+2020-12-06 22:33:20,096 -- root -- INFO -- 5.845810810810811
+2020-12-06 22:33:20,330 -- root -- INFO -- Fct cleanId

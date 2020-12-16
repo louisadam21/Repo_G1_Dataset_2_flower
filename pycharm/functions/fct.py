@@ -3,7 +3,7 @@ import pandas as pd
 import logging
 logging.basicConfig(filename='test_log.log',level=logging.INFO,format='%(asctime)s -- %(name)s -- %(levelname)s -- %(message)s')
 from py2neo import Node, Relationship,Graph
-graphFlower = Graph("bolt://localhost:7687", auth=None)
+graphFlower = Graph()
 
 def dfcsv(chemin,separ): #Fonction qui permet de lire un csv et le convertir en dataframe
     """
@@ -95,7 +95,6 @@ def isNan(dataframe): #Fonction qui permet de voir les lignes contenant Nan
 
 def createGraph(dataframe,nodeId,idx,dico): #Fonction qui permet la création de la relation entre l'Id de la fleur et les tailles de petales,sépales
     """
-
     :param dataframe: pandas.Dataframe
     :param nodeId: int
     :param idx: int
